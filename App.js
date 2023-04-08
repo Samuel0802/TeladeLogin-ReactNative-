@@ -9,14 +9,15 @@ import {
     StyleSheet,
     Animated,
     Keyboard,
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback 
 } from "react-native";
+
 
 
 export default function App() {
 
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }));
-    const [opacity] = useState(new Animated.Value(0));
+    const [opacity] = useState(new Animated.Value(0)); 
     const [logo] = useState(new Animated.ValueXY({ x: 130, y: 155 }));
 
     useEffect(() => {
@@ -29,11 +30,7 @@ export default function App() {
                 toValue: 0,
                 speed: 4,
                 bounciness: 20,
-                useNativeDriver: true,
-
-                
-                
-                
+                useNativeDriver: true,  
             }),
             Animated.timing(opacity, {
                 toValue: 1,
@@ -86,7 +83,7 @@ export default function App() {
 
 
     return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}> 
             <KeyboardAvoidingView style={styles.backgroud}>
                 <View style={styles.containerLogo}>
                     <Animated.Image
@@ -125,6 +122,7 @@ export default function App() {
                         placeholder="Senha"
                         autoCorrect={false}
                         autoCapitalize="words"
+                        secureTextEntry={true}//Vai esconder a senha  
                         onChangeText={() => { }}
                     />
 
